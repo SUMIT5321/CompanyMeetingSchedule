@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    style="@style/Widget.AppCompat.Toolbar"
+    android:elevation="8dp">
+
+    <Button
+        android:id="@+id/action_left_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:text="PREV"
+        android:drawableStart="@drawable/ic_navigate_before_white_24dp"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        style="?attr/actionButtonStyle"
+        android:textAppearance="@style/Action.ButtonText"/>
+
+    <TextView
+        android:id="@+id/action_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="06-08-2015"
+        android:textAppearance="@style/Action.Heading"/>
+
+    <Button
+        android:id="@+id/action_right_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:text="NEXT"
+        android:gravity="center_vertical"
+        android:drawableEnd="@drawable/ic_navigate_next_white_24dp"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackground"
+        style="?attr/actionButtonStyle"
+        android:textAppearance="@style/Action.ButtonText"/>
+
+</FrameLayout>

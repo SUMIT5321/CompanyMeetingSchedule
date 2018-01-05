@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.labs.jharkhandi.companymeetingscheduler.activity.MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/meeting_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/button_above_line"/>
+
+    <FrameLayout
+        android:id="@+id/progress_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/button_above_line"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/schedule_meeting_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_alignParentBottom="true"
+        android:text="@string/schedule_button_text"
+        android:textAppearance="@style/Action.ButtonText"
+        android:background="@drawable/button_background"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <View
+        android:id="@+id/button_above_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:minHeight="1px"
+        android:layout_above="@id/schedule_meeting_button"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_underline" />
+
+</RelativeLayout>

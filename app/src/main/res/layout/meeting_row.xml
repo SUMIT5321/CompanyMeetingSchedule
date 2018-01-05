@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_grey_one">
+
+    <TextView
+        android:id="@+id/time_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="3dp"
+        android:text="11:00AM"
+        android:textAppearance="@style/Date.row"/>
+
+    <TextView
+        android:id="@+id/dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@id/time_start"
+        android:text="-"
+        android:textAppearance="@style/Date.row"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/time_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/dash"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_marginBottom="3dp"
+        android:text="12:00PM"
+        android:textAppearance="@style/Date.row"/>
+
+    <View
+        android:id="@+id/date_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:minHeight="1px"
+        android:layout_below="@id/time_start"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:background="@drawable/date_underline"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/short_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_underline"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        android:textAppearance="@style/Desc"/>
+
+    <View
+        android:id="@+id/row_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:minHeight="1px"
+        android:layout_below="@id/short_desc"
+        android:background="@drawable/row_underline"/>
+
+</RelativeLayout>
