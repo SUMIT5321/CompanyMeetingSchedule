@@ -17,13 +17,13 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_vertical">
 
             <TextView
                 android:id="@+id/time_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
                 android:layout_marginBottom="3dp"
@@ -39,7 +39,7 @@
                 android:layout_alignStart="@id/time_start"
                 android:layout_alignEnd="@id/time_start"
                 android:background="@drawable/date_underline"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="3dp"/>
 
             <TextView
                 android:id="@+id/time_end"
@@ -48,7 +48,7 @@
                 android:layout_below="@id/date_underline"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="8dp"
                 android:text="12:00PM"
                 android:textAppearance="@style/Date.row"/>
 

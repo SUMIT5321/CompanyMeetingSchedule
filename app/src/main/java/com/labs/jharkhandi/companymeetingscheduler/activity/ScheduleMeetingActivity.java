@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -329,11 +330,7 @@ public class ScheduleMeetingActivity extends AppCompatActivity{
         int hour1 = Util.getHourOfDay(time24HrFormat);
         int minute1 = Util.getMinute(time24HrFormat);
 
-        if(hour1 - hour != 0){
-            return hour1-hour;
-        }else{
-            return minute1-minute;
-        }
+        return compareTime(hour1, minute1, hour, minute);
     }
 
     private int compareTime(int hour1, int minute1, int hour, int minute){
@@ -345,37 +342,35 @@ public class ScheduleMeetingActivity extends AppCompatActivity{
     }
 
     private boolean validateStartTime(){
-        CharSequence text = mStartTime.getText();
-        if(text == null || text.toString().equalsIgnoreCase("")){ /* empty field */
+        if(TextUtils.isEmpty(mStartTime.getText())){
             mStartTimeLayout.setError(getString(R.string.err_empty));
             return false;
-        }else if(mEndTime.getText() != null && !mEndTime.getText().toString().equalsIgnoreCase("") &&
+        }else if(!TextUtils.isEmpty(mEndTime.getText()) &&
                 compareTime(mEndHour, mEndMinute, mStartHour, mStartMinute) <= 0){
             /* if end time is equal to or before start time */
             mStartTimeLayout.setError(getString(R.string.err_start_after_end));
             return false;
         }
         mStartTimeLayout.setError(null);
-        if(mEndTime.getText() != null && !mEndTime.getText().toString().equalsIgnoreCase("")){
+        if(!TextUtils.isEmpty(mEndTime.getText())){
             mEndTimeLayout.setError(null);
         }
         return true;
     }
 
     private boolean validateEndTime(){
-        CharSequence text = mEndTime.getText();
-        if(text == null || text.toString().equalsIgnoreCase("")){ /* empty field */
+        if(TextUtils.isEmpty(mEndTime.getText())){ /* empty field */
             mEndTimeLayout.setError(getString(R.string.err_empty));
             return false;
-        }else if(mStartTime.getText() != null && !mStartTime.getText().toString().equalsIgnoreCase("") &&
+        }else if(!TextUtils.isEmpty(mStartTime.getText()) &&
                 compareTime(mEndHour, mEndMinute, mStartHour, mStartMinute) <= 0){
             /* if end time is equal to or before start time */
             mEndTimeLayout.setError(getString(R.string.err_end_before_start));
             return false;
         }
         mEndTimeLayout.setError(null);
-        if(mStartTime.getText() != null && !mStartTime.getText().toString().equalsIgnoreCase("")){
-            mStartTime.setError(null);
+        if(!TextUtils.isEmpty(mStartTime.getText())){
+            mStartTimeLayout.setError(null);
         }
         return true;
     }
